@@ -63,8 +63,7 @@ main {
 
 /* -- Back button -- */
 .back-btn {
-  display: inline-flex;
-  align-items: center;
+  display: block;
   background: none;
   border: none;
   color: var(--text-muted);
@@ -72,7 +71,7 @@ main {
   font-size: 0.9rem;
   cursor: pointer;
   padding: 0.25rem 0;
-  margin-bottom: 1rem;
+  margin: 1.5rem auto 0;
   transition: color 0.2s;
 }
 
