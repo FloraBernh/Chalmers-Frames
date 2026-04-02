@@ -333,24 +333,38 @@ function getTouchDist(touches) {
 // ===================================================
 // Navigation buttons
 // ===================================================
+function startOver() {
+  chosenAspect = null;
+  chosenFrameId = null;
+  userImg = null;
+  frameImgs = {};
+  fileInput.value = '';
+  resetTransform();
+  document.querySelectorAll('.format-card').forEach(c => c.classList.remove('selected'));
+  frameList.querySelectorAll('.frame-list-item').forEach(b => b.classList.remove('selected'));
+  showStep('step-upload');
+}
+
 function setupNavButtons() {
+  // Logo resets to start
+  document.getElementById('logo-link').addEventListener('click', e => {
+    e.preventDefault();
+    startOver();
+  });
+
+  // Back buttons
+  document.getElementById('back-to-upload').addEventListener('click', () => showStep('step-upload'));
+  document.getElementById('back-to-frame').addEventListener('click', () => showStep('step-frame'));
+  document.getElementById('back-to-format').addEventListener('click', () => showStep('step-format'));
+
+  // Step 4 buttons
   changeImageBtn.addEventListener('click', () => {
     userImg = null;
     fileInput.value = '';
     showStep('step-upload');
   });
 
-  startOverBtn.addEventListener('click', () => {
-    chosenAspect = null;
-    chosenFrameId = null;
-    userImg = null;
-    frameImgs = {};
-    fileInput.value = '';
-    resetTransform();
-    document.querySelectorAll('.format-card').forEach(c => c.classList.remove('selected'));
-    frameList.querySelectorAll('.frame-list-item').forEach(b => b.classList.remove('selected'));
-    showStep('step-upload');
-  });
+  startOverBtn.addEventListener('click', () => startOver());
 }
 
 // ===================================================

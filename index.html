@@ -11,7 +11,7 @@
 <body>
 
   <header>
-    <img src="logo.png" alt="Chalmers University of Technology" class="brand-logo">
+    <a href="#" id="logo-link"><img src="logo.png" alt="Chalmers University of Technology" class="brand-logo"></a>
     <h1>Photo Frames</h1>
     <p class="subtitle">Upload a photo, choose a frame and download the result.</p>
   </header>
@@ -35,6 +35,7 @@
 
     <!-- Step 2: Choose frame -->
     <section id="step-frame" class="hidden">
+      <button class="back-btn" id="back-to-upload">&larr; Back</button>
       <h2 class="step-label">What is your photo showing?</h2>
       <p class="step-description">Choose the frame that best matches your content.</p>
       <div class="frame-list" id="frame-list"></div>
@@ -42,6 +43,7 @@
 
     <!-- Step 3: Choose format with live preview -->
     <section id="step-format" class="hidden">
+      <button class="back-btn" id="back-to-frame">&larr; Back</button>
       <h2 class="step-label">Choose format</h2>
       <p class="step-description">See how your photo looks in each format.</p>
       <div class="format-options">
@@ -62,6 +64,7 @@
 
     <!-- Step 4: Adjust + export -->
     <section id="step-preview" class="hidden">
+      <button class="back-btn" id="back-to-format">&larr; Back</button>
       <h2 class="step-label">Adjust and export</h2>
       <p class="step-description">Drag to reposition. Scroll to zoom.</p>
       <div class="canvas-wrapper">
